@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
 
   var today = new Date();
-  var time = today.getHours() + ":" + today.getMinutes();
+  var time = today.getHours() + ":" + (mins = ('0' + today.getMinutes()).slice(-2));
   var hours = today.getHours();
   var msg;
   if (hours < 12) msg = "Good Morning";
