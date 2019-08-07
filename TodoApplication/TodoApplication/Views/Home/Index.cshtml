@@ -2,7 +2,7 @@
     ViewBag.Title = "Home Page";
 }
 
-<header class="intro">
+<div id="intro">
     <div class="time">
         <span id="time"></span>
     </div>
@@ -11,11 +11,16 @@
     </div>
     <p class="lead">Your personal ToDo application</p>
 
-    <a href="Account/Login" class="btn btn-circle page-scroll" aria-label="Left Align">
+    <a href="Account/Login" id="glyf" class="btn btn-circle page-scroll" aria-label="Left Align">
         <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
     </a>
-</header>
 
+</div>
 @section Scripts {
     <script type="text/javascript" src="@Url.Content("/Scripts/time.js")"></script>
+    <script type="text/javascript">
+    var ses = @Session["iduser"];
+    if (ses != null)
+        $(glyf).attr("href", "ToDo/Index");
+    </script>
 }

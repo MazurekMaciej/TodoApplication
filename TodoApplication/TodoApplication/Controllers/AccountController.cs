@@ -441,7 +441,8 @@ namespace TodoApplication.Controllers
             public ActionResult LogOff()
             {
                 AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-                return RedirectToAction("Index", "Home");
+               Session.Clear();
+            return RedirectToAction("Index", "Home");
             }
 
             //

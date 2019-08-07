@@ -55,7 +55,8 @@ namespace TodoApplication.Controllers
            ToDoModels todo = new ToDoModels();
             {
                todo.PersonId = (int)Session["iduser"];
-           };
+               todo.Date = DateTime.Now;
+            };
             return View(todo);
         }
 

@@ -16,23 +16,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("TODO", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <a href='@Url.Action("Index", "Home")'>
+                    <img src='@Url.Content("~/img/todo.png")' style="width:75px" />
+                </a>
+                @*    @Html.ActionLink("TODO", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li></li>
-
-                </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </nav>
     <div class="container body-content">
         @RenderBody()
-        <footer style="font-size: 10px;">
-            <p>&copy; @DateTime.Now.Year - TODO</p>
-        </footer>
+
     </div>
 
     @Scripts.Render("~/bundles/jquery")
